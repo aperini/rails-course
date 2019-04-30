@@ -1,14 +1,12 @@
-<!-- very important here is the ID to reference the modal-->
-<!-- id="new-question-modal"-->
-<div class="modal fade" id="new-question-modal" tabindex="-1">
+<div class="modal fade" id="new-answer-modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">New Question</h4>
+        <h4 class="modal-title">New Answer</h4>
       </div>
       <!-- The form_for helper will generate the form and include a valid auth token -->
-      <%= form_for :question, url: '/questions', html: { class: 'form-horizontal' } do %>
+      <%= form_for :answer, url: '/answers', html: { class: 'form-horizontal' } do %>
         <div class="modal-body">
           <div class="form-group">
             <label for="inputEmail" class="col-sm-2 control-label">Email</label>
@@ -18,10 +16,10 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="inputQuestion" class="col-sm-2 control-label">Question</label>
+            <label for="inputAnswer" class="col-sm-2 control-label">Answer</label>
             <div class="col-sm-10">
-              <!-- The name="question_body" is what makes the value available in the backend -->
-              <textarea class="form-control" name="question_body" id="inputQuestion" placeholder="What would you like to know" required></textarea>
+              <!-- The name="answer_body" is what makes the value available in the backend -->
+              <textarea class="form-control" name="answer_body" id="inputAnswer" placeholder="What is your answer?" required></textarea>
             </div>
           </div>
         </div>
@@ -30,6 +28,6 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       <% end %>
-   </div>
+    </div>
   </div>
 </div>
