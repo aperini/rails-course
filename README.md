@@ -13,3 +13,9 @@ http://localhost:3000/
 rails generate controller home index
 
 http://localhost:3000/about
+
+rails generate resource question email:string body:text
+
+rake db:migrate
+
+rails console
