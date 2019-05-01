@@ -8,6 +8,9 @@ class QuestionsController < ApplicationController
   def create
     Question.create(question_params)
 
+    # keeping email in session to pre-fill it in forms
+    session[:current_user_email] = question_params[:email]
+
     redirect_to root_path
   end
 

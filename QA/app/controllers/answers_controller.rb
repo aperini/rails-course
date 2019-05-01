@@ -2,8 +2,13 @@
 class AnswersController < ApplicationController
   def create
     question = Question.find(params[:answer][:question_id])
+
     # Answer.create(answer_params)
     question.answers.create(answer_params)
+
+    # keeping email in session to pre-fill it in forms
+    session[:current_user_email] = answer_params[:email]
+
     # rails automatically finds the view associated to show a question
     redirect_to question
   end
