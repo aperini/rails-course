@@ -8,7 +8,9 @@ class AnswersController < ApplicationController
 
     # notify the owner of the question
     mail = MainMailer.notify_question_author(answer)
-    mail.deliver_now
+    # uses Active job in the backgroud to deliver the email with an asynchronous
+    # processing library (in our case, the Sucker Punch)
+    mail.deliver_later
 
     # keeping email in session to pre-fill it in forms
     session[:current_user_email] = answer_params[:email]

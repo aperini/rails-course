@@ -6,6 +6,9 @@ class MainMailer < ApplicationMailer
   #   en.main_mailer.notify_question_author.subject
   #
   def notify_question_author(answer)
+    # simulating a slow email processing
+    sleep 5
+
     @greeting = "Hi"
 
     # exposing this to use in the mail views
