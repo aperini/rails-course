@@ -21,3 +21,7 @@ rake db:migrate
 rails console
 
 rake routes
+
+# Mailer
+
+rails generate mailer main_mailer notify_question_author
