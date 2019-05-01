@@ -19,3 +19,5 @@ rails generate resource question email:string body:text
 rake db:migrate
 
 rails console
+
+rake routes

@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+
   root 'home#index'
 
   # verb '/url' => 'controller#action'
   get '/about' => 'home#about'
 
   resources :questions
+  resources :answers
 
   # post '/questions'     => 'home#temp'
   # get  '/questions/:id' => 'home#question'
