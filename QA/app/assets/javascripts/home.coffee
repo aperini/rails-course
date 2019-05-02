@@ -7,6 +7,9 @@ ready = ->
     document.location = $(this).data("target")
     return false
 
+  $(".modal").on "shown.bs.modal", ->
+    $(this).find("textarea").focus()
+
 # calls function ready above defined when de page is ready
 $(document).ready(ready)
 
