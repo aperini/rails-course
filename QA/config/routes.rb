@@ -1,4 +1,8 @@
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
 
   root 'home#index'
 
@@ -7,10 +11,4 @@ Rails.application.routes.draw do
 
   resources :questions
   resources :answers
-
-  # post '/questions'     => 'home#temp'
-  # get  '/questions/:id' => 'home#question'
-  # post '/answers'       => 'home#answer'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

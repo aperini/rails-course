@@ -1,0 +1,54 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/questions": {
+      "post": {
+        "summary": "Creates a question",
+        "tags": [
+          "Question"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authentication-Token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "question",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "email",
+                "body"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "question created"
+          },
+          "400": {
+            "description": "invalid request"
+          }
+        }
+      }
+    }
+  }
+}
